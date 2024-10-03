@@ -18,10 +18,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/my-ts-library"
+    "url": "https://github.com/WaterPath-Project/gadm-client"
   },
   "bugs": {
-    "url": "https://github.com/your-username/my-ts-library/issues"
+    "url": "https://github.com/WaterPath-Project/gadm-client/issues"
   },
-  "homepage": "https://github.com/your-username/my-ts-library#readme"
+  "homepage": "https://github.com/WaterPath-Project/gadm-client#readme"
 }
