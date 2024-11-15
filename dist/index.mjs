@@ -1,29 +1,5 @@
-"use strict";
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-
 // src/index.ts
-var src_exports = {};
-__export(src_exports, {
-  default: () => src_default
-});
-module.exports = __toCommonJS(src_exports);
-var import_geopackage = require("@ngageoint/geopackage");
+import { GeoPackageAPI } from "@ngageoint/geopackage";
 var dotCount = function(e) {
   var result = 0, i = 0;
   for (i; i < e.length; i++) if (e[i] == ".") result++;
@@ -32,7 +8,7 @@ var dotCount = function(e) {
 var GADMclient = {
   getNames: async (country, level, parents, gpkg) => {
     if (typeof gpkg !== "undefined" && typeof gpkg === "string") {
-      import_geopackage.GeoPackageAPI.open(gpkg).then(async (geoPackage) => {
+      GeoPackageAPI.open(gpkg).then(async (geoPackage) => {
         var tables = geoPackage.getFeatureTables();
         const featureDao = tables.indexOf("gadm_410") !== -1 ? geoPackage.getFeatureDao("gadm_410") : tables.indexOf("ADM_ADM_" + level) !== -1 ? geoPackage.getFeatureDao("ADM_ADM_" + level) : null;
         if (featureDao !== null) {
@@ -80,7 +56,7 @@ var GADMclient = {
   },
   getGeometry: async (country, level, parents, gpkg) => {
     if (typeof gpkg !== "undefined" && typeof gpkg === "string") {
-      import_geopackage.GeoPackageAPI.open(gpkg).then(async (geoPackage) => {
+      GeoPackageAPI.open(gpkg).then(async (geoPackage) => {
         var tables = geoPackage.getFeatureTables();
         console.log(tables);
         const featureDao = tables.indexOf("gadm_410") !== -1 ? geoPackage.getFeatureDao("gadm_410") : tables.indexOf("ADM_ADM_" + level) !== -1 ? geoPackage.getFeatureDao("ADM_ADM_" + level) : null;
@@ -176,3 +152,6 @@ var GADMclient = {
 };
 GADMclient.getNames("BRA", 2, []);
 var src_default = GADMclient;
+export {
+  src_default as default
+};

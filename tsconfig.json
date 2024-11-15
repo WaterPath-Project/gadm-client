@@ -1,6 +1,6 @@
 {
     "include": ["src"],
-    "exclude": ["**/*.test.ts"],
+    "exclude": ["**/*.test.ts", "node_modules"],
     "compilerOptions": {
       "module": "esnext",
       "target": "esnext",
@@ -10,7 +10,6 @@
       "allowJs": true,
       "moduleResolution": "node",
       "skipLibCheck": true,
-      "esModuleInterop": true,
       "outDir": "dist",
       "rootDir": "src"
     }

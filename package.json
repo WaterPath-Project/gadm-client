@@ -1,19 +1,23 @@
 {
   "name": "gadm-client",
-  "type": "module",
   "version": "0.1.0",
   "description": "My TypeScript Library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "test": "vitest run",
+    "test": "vitest",
     "test:watch": "vitest"
   },
-  "keywords": ["typescript", "library"],
+  "keywords": [
+    "typescript",
+    "library"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "repository": {
@@ -23,5 +27,13 @@
   "bugs": {
     "url": "https://github.com/WaterPath-Project/gadm-client/issues"
   },
-  "homepage": "https://github.com/WaterPath-Project/gadm-client#readme"
+  "homepage": "https://github.com/WaterPath-Project/gadm-client#readme",
+  "dependencies": {
+    "@ngageoint/geopackage": "^4.2.6",
+    "vitest": "^2.1.2"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.1",
+    "tsup": "^8.3.0"
+  }
 }
